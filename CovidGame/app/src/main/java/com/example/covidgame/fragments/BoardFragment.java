@@ -1,4 +1,4 @@
-package com.example.covidgame;
+package com.example.covidgame.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

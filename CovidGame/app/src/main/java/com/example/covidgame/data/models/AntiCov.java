@@ -1,4 +1,4 @@
-package com.example.covidgame.models;
+package com.example.covidgame.data.models;
 
 public class AntiCov extends BObject {
     public AntiCov(int position, Location location) {

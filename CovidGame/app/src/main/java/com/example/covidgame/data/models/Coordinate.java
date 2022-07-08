@@ -1,6 +1,6 @@
-package com.example.covidgame.models;
+package com.example.covidgame.data.models;
 
-import com.example.covidgame.enums.Direction;
+import com.example.covidgame.data.enums.Direction;
 
 public class Coordinate {
 

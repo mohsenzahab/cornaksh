@@ -1,36 +1,35 @@
-package com.example.covidgame;
-
-import android.app.AlertDialog;
-import android.os.Bundle;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+package com.example.covidgame.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.os.Bundle;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.example.covidgame.R;
 import com.example.covidgame.listeners.OnBoardStateChangeListener;
+import com.example.covidgame.views.BoardView;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MainActivity extends AppCompatActivity {
+public class GameBoardActivity extends AppCompatActivity {
     TextView timerText;
     BoardView view;
     Timer timer;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-//        FrameLayout.LayoutParams
+        setContentView(R.layout.activity_game_board);
 
 
         LinearLayout linearLayout = findViewById(R.id.linearLayout1);
-        TextView scoreText = (TextView) findViewById(R.id.tv_score);
-        TextView antiCovs = (TextView) findViewById(R.id.tv_anti_covs);
-        timerText = (TextView) findViewById(R.id.tv_time);
+        TextView scoreText = findViewById(R.id.tv_score);
+        TextView antiCovs = findViewById(R.id.tv_anti_covs);
+        timerText = findViewById(R.id.tv_time);
         view = new BoardView(this);
         timer = new Timer();
         view.setOnBoardChangeListener(new OnBoardStateChangeListener() {
@@ -39,14 +38,14 @@ public class MainActivity extends AppCompatActivity {
                 if (newScore < 0) {
                     view.pauseGame();
                     timer.cancel();
-                    new AlertDialog.Builder(MainActivity.this)
+                    new AlertDialog.Builder(GameBoardActivity.this)
                             .setTitle("You Lost!")
                             .setMessage("Do you wana try again?")
 
                             .setPositiveButton(android.R.string.yes, (dialog, which) -> {
                                 view.resetState();
                                 timer = new Timer();
-                                timer.schedule(new GameTimer(MainActivity.this), 0, 1000);
+                                timer.schedule(new GameTimer(GameBoardActivity.this), 0, 1000);
                             })
                             .setNegativeButton(android.R.string.no, null)
                             .setIcon(android.R.drawable.ic_dialog_alert)
@@ -71,15 +70,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
 }
-
 class GameTimer extends TimerTask {
 
     int periodSeconds = 120;
-    MainActivity activity;
+    GameBoardActivity activity;
 
-    GameTimer(MainActivity activity) {
+    GameTimer(GameBoardActivity activity) {
         this.activity = activity;
     }
 

@@ -1,8 +1,8 @@
-package com.example.covidgame.models;
+package com.example.covidgame.data.models;
 
-import com.example.covidgame.BoardView;
-import com.example.covidgame.enums.CovidType;
-import com.example.covidgame.enums.Direction;
+import com.example.covidgame.views.BoardView;
+import com.example.covidgame.data.enums.CovidType;
+import com.example.covidgame.data.enums.Direction;
 
 import java.util.HashMap;
 

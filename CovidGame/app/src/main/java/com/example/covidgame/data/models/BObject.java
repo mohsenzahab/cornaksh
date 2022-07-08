@@ -1,4 +1,4 @@
-package com.example.covidgame.models;
+package com.example.covidgame.data.models;
 
 import java.util.Objects;
 

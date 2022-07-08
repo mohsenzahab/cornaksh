@@ -1,4 +1,4 @@
-package com.example.covidgame;
+package com.example.covidgame.views;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -12,15 +12,16 @@ import android.view.ContextMenu;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.example.covidgame.enums.CovidType;
-import com.example.covidgame.enums.Direction;
+import com.example.covidgame.R;
+import com.example.covidgame.data.enums.CovidType;
+import com.example.covidgame.data.enums.Direction;
 import com.example.covidgame.listeners.OnBoardStateChangeListener;
-import com.example.covidgame.models.AntiCov;
-import com.example.covidgame.models.BObject;
-import com.example.covidgame.models.Covid;
-import com.example.covidgame.models.Location;
-import com.example.covidgame.models.Person;
-import com.example.covidgame.models.Wall;
+import com.example.covidgame.data.models.AntiCov;
+import com.example.covidgame.data.models.BObject;
+import com.example.covidgame.data.models.Covid;
+import com.example.covidgame.data.models.Location;
+import com.example.covidgame.data.models.Person;
+import com.example.covidgame.data.models.Wall;
 
 import java.util.ArrayList;
 import java.util.HashMap;
