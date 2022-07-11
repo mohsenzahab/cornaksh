@@ -5,6 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/CovidGame.iml" filepath="$PROJECT_DIR$/.idea/modules/CovidGame.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CovidGame.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CovidGame.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-644910745/CovidGame.flutter.iml" filepath="$PROJECT_DIR$/.idea/modules/-644910745/CovidGame.flutter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1044880742/CovidGame.flutter_plugin_android_lifecycle.iml" filepath="$PROJECT_DIR$/.idea/modules/1044880742/CovidGame.flutter_plugin_android_lifecycle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/548418530/CovidGame.image_picker_android.iml" filepath="$PROJECT_DIR$/.idea/modules/548418530/CovidGame.image_picker_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/114045332/CovidGame.shared_preferences_android.iml" filepath="$PROJECT_DIR$/.idea/modules/114045332/CovidGame.shared_preferences_android.iml" />
     </modules>
   </component>
 </project>

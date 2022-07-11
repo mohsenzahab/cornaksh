@@ -18,6 +18,6 @@
         android:layout_weight="1"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:text="v 1.0"/>
+        android:text="v 2.0"/>
 
 </LinearLayout>
