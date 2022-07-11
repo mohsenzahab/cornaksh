@@ -51,7 +51,7 @@ public abstract class MovableObject extends BObject {
                 currentLocation.x += nextStep;
                 break;
         }
-        Log.i("boardView", "move: " + desDir() + "  " + currentLocation);
+//        Log.i("boardView", "move: " + desDir() + "  " + currentLocation);
 
     }
 

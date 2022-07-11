@@ -5,4 +5,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/linearLayout1"
-    tools:context=".activities.MainActivity"></LinearLayout>
+    android:layout_centerInParent="true"
+    tools:context=".activities.MainActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAlignment="center"
+        android:text="Main Text "/>
+</LinearLayout>

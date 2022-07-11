@@ -41,10 +41,13 @@ public class BoardView extends View {
     public ArrayList<BObject> deletedObjects;
     String TAG = "boardView";
     Paint paintLine;
+    int difficulty;
+    int fps=20;
+    int secondsPerFrame;
     int lineStrokeWidth = 10;
     List<Float> horizontalPoints = new ArrayList<>();
     List<Float> verticalPoints = new ArrayList<>();
-    int covidsCount = 7;
+    int covidsCount ;
     int[] wallPositions = {8, 9, 10, 11, 12, 15, 22, 26, 29, 33, 36, 40, 53, 52, 51};
     Rect dest = new Rect();
     private Bitmap bitmapRedCovid;
@@ -53,11 +56,24 @@ public class BoardView extends View {
     private Bitmap bitmapPerson;
     private Bitmap bitmapAntiCov;
     private boolean gameRunning;
-    public BoardView(Context context) {
+
+    public boolean isGameRunning(){
+        return  gameRunning;
+    }
+
+    public int getScore(){
+        return  person.score;
+    }
+
+    public BoardView(Context context,int difficulty) {
         super(context);
         paintLine = new Paint();
         paintLine.setColor(Color.BLACK);
         paintLine.setStrokeWidth(lineStrokeWidth);
+        this.difficulty=difficulty;
+        covidsCount=5+difficulty;
+        fps=20+(difficulty-1)*13;
+        secondsPerFrame=1000/fps;
 
     }
 
@@ -72,11 +88,8 @@ public class BoardView extends View {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-
         initBasement(w, h);
         initObjects();
-
-
     }
 
     private void initObjects() {
@@ -177,7 +190,7 @@ public class BoardView extends View {
         objects.removeAll(deletedObjects);
 
         try {
-            Thread.sleep(50);
+            Thread.sleep(secondsPerFrame);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -229,6 +242,11 @@ public class BoardView extends View {
 
     public void pauseGame() {
         gameRunning = false;
+    }
+
+    public  void resumeGame(){
+        gameRunning=true;
+        invalidate();
     }
 
     List<Float> arrayToList(float[] arrayPoints) {
